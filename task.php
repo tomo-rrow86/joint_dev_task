@@ -169,7 +169,7 @@ $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"],
 
 # 以下に回答を記載
 
-print(PHP_EOL);
+echo PHP_EOL;
 
 $merge_sports = [];
 foreach($sports as $key => $result_sport){
@@ -190,12 +190,7 @@ foreach ($result_sports2 as $key => $hobbies) {
     $users_hobbies_number = $key + 1;
     print("No" . $users_hobbies_number . " " . $hobbies . PHP_EOL);
 };
-print(PHP_EOL);
-
-?>
-
-//------------------------ここまで完了------------------------
-
+echo PHP_EOL;
 
 print("#####q12#####" . PHP_EOL);
 $data = ["user" => ["name" => "satou", "age" => 33]];
@@ -204,18 +199,29 @@ $data = ["user" => ["name" => "satou", "age" => 33]];
 
 echo PHP_EOL;
 
+print($data["user"]["name"] . PHP_EOL); 
+
+echo PHP_EOL;
+
 print("#####q13#####" . PHP_EOL);
 $user_data = ["name" => "神里", "age" => 31, "address" => "埼玉"];
 $update_data = ["age" => 32, "address" => "沖縄"];
 
 # 以下に回答を記載
+echo PHP_EOL;
+
+$user_data = array_merge($user_data,$update_data);
+print_r($user_data);
 
 echo PHP_EOL;
 
 print("#####q14#####" . PHP_EOL);
 $data = ["name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com"];
 
-# 以下に回答を記載
+
+echo PHP_EOL;
+
+print_r(array_values($data));
 
 echo PHP_EOL;
 
@@ -226,6 +232,32 @@ $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 # 以下に回答を記載
 
 echo PHP_EOL;
+
+print('$data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];' . PHP_EOL);
+print("実行結果" . PHP_EOL);
+
+if ( array_key_exists('age', $data1) ) {
+    print("OK" . PHP_EOL);
+} else {
+    print("NG" . PHP_EOL);
+}
+
+echo PHP_EOL;
+
+print('$data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];' . PHP_EOL);
+print("実行結果" . PHP_EOL);
+
+if ( array_key_exists('age', $data2) ) {
+    print("OK" . PHP_EOL);
+} else {
+    print("NG" . PHP_EOL);
+}
+
+echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
 
 print("#####q16#####" . PHP_EOL);
 $users = [
