@@ -255,10 +255,6 @@ if ( array_key_exists('age', $data2) ) {
 
 echo PHP_EOL;
 
-?>
-
-//------------------------ここまで完了------------------------
-
 print("#####q16#####" . PHP_EOL);
 $users = [
 ["name" => "satou", "age" => 22],
@@ -270,6 +266,16 @@ $users = [
 # 以下に回答を記載
 
 echo PHP_EOL;
+
+foreach( $users as $value ) {
+    print("「私の名前は" . $value["name"] . "です。年齢は" . $value["age"] . "歳です。」" .PHP_EOL);
+}
+
+echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
 
 print("#####q17#####" . PHP_EOL);
 class User
