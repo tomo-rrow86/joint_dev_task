@@ -149,17 +149,16 @@ $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍�
 
 # 以下に回答を記載
 
-//「 まぁまぁ好きです 」が出ることも確認済みです。
-
-$search_word = "いか";
-$result_foods = in_array( $search_word , $foods );
+$search_word = "うに";
 
 echo PHP_EOL;
 
-if( $result_foods ) {
-    print( "好物です" .PHP_EOL );
-} else {
-    print( "まぁまぁ好きです" .PHP_EOL);
+foreach ( $foods as $food ) {
+    if( preg_match( "/" . $search_word . "/" ,$food ) ) {
+        print( "「" . $food . "」" . "は、" . "好物です。" .PHP_EOL );
+    } else {
+        print( "「" . $food . "」" . "は、" . "まぁまぁ好きです。" .PHP_EOL);
+    };
 };
 
 echo PHP_EOL;
