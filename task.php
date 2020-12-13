@@ -107,8 +107,6 @@ $array = ["1", "2", "3", "4", "5"];
 
 echo PHP_EOL;
 
-//var_dump で int型 確認済みです。
-
 print_r(array_map('intval', $array));
 
 echo PHP_EOL;
@@ -319,7 +317,7 @@ class Man
 
     public function introduce()
     {
-        if ( $this->age > 20)
+        if ( $this->age >= 20)
         {
             print("こんにちは，" . $this->name . "と申します。宜しくお願いいたします。" . PHP_EOL);
         } else {
@@ -338,28 +336,30 @@ $man2->introduce();
 
 echo PHP_EOL;
 
-?>
-
-//------------------------ここまで完了------------------------
-
 print("#####q19#####" . PHP_EOL);
+
 class Item
 {
 # 以下を修正して下さい
+    public $name;
 
-protected $name;
+    function __construct($book_name)
+    {
+        $this->name = $book_name;
+    }
+}
 
-function __construct($book_name)
-{
-$this->name = $book_name;
-}
-}
+echo PHP_EOL;
 # 以下は変更しないで下さい
 
 $book = new Item("ゼロ秒思考");
 print($book->name . PHP_EOL);
 
 echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
 
 print("#####q20#####" . PHP_EOL);
 class Human
