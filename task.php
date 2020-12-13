@@ -141,9 +141,6 @@ print_r($member_names);
 
 echo PHP_EOL;
 
-//------------------------12/12 修正------------------------
-
-
 print("#####q10#####" . PHP_EOL);
 $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼"];
 
@@ -162,8 +159,6 @@ foreach ( $foods as $food ) {
 };
 
 echo PHP_EOL;
-
-//------------------------修正箇所ここまで------------------------
 
 print("#####q11#####" . PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
@@ -256,6 +251,8 @@ if ( array_key_exists('age', $data2) ) {
 
 echo PHP_EOL;
 
+//------------------------12/13 提出 ここから------------------------
+
 print("#####q16#####" . PHP_EOL);
 $users = [
 ["name" => "satou", "age" => 22],
@@ -274,17 +271,28 @@ foreach( $users as $value ) {
 
 echo PHP_EOL;
 
-?>
-
-//------------------------ここまで完了------------------------
-
 print("#####q17#####" . PHP_EOL);
 class User
 {
+    private $name;
+    private $age;
+    private $gender;
 
-# コードを追加
+    public function __construct($name, $age, $gender) {
+        $this->name = $name;
+        $this->age = $age;
+        $this->gender = $gender;
+    }
 
+    public function info()
+    {
+        print("名前: " . $this->name . PHP_EOL);
+        print("年齢: " . $this->age . PHP_EOL);
+        print("性別: " . $this->gender . PHP_EOL);
+    }
 }
+
+echo PHP_EOL;
 
 $user1 = new User("神里", 32, "男");
 $user2 = new User("あじー", 32, "男");
@@ -294,6 +302,10 @@ print("-------------" . PHP_EOL);
 $user2->info();
 
 echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
 
 print("#####q18#####" . PHP_EOL);
 
