@@ -107,8 +107,6 @@ $array = ["1", "2", "3", "4", "5"];
 
 echo PHP_EOL;
 
-//var_dump で int型 確認済みです。
-
 print_r(array_map('intval', $array));
 
 echo PHP_EOL;
@@ -141,9 +139,6 @@ print_r($member_names);
 
 echo PHP_EOL;
 
-//------------------------12/12 修正------------------------
-
-
 print("#####q10#####" . PHP_EOL);
 $foods = ["いか", "たこ", "うに", "しゃけ", "うにぎり", "うに軍艦", "うに丼"];
 
@@ -162,8 +157,6 @@ foreach ( $foods as $food ) {
 };
 
 echo PHP_EOL;
-
-//------------------------修正箇所ここまで------------------------
 
 print("#####q11#####" . PHP_EOL);
 $sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]];
@@ -256,6 +249,8 @@ if ( array_key_exists('age', $data2) ) {
 
 echo PHP_EOL;
 
+//------------------------12/13 提出 ここから------------------------
+
 print("#####q16#####" . PHP_EOL);
 $users = [
 ["name" => "satou", "age" => 22],
@@ -274,17 +269,29 @@ foreach( $users as $value ) {
 
 echo PHP_EOL;
 
-?>
-
-//------------------------ここまで完了------------------------
-
 print("#####q17#####" . PHP_EOL);
 class User
 {
+    private $name;
+    private $age;
+    private $gender;
 
-# コードを追加
+    public function __construct($user_name, $user_age, $user_gender) 
+    {
+        $this->name = $user_name;
+        $this->age = $user_age;
+        $this->gender = $user_gender;
+    }
 
+    public function info()
+    {
+        print("名前: " . $this->name . PHP_EOL);
+        print("年齢: " . $this->age . PHP_EOL);
+        print("性別: " . $this->gender . PHP_EOL);
+    }
 }
+
+echo PHP_EOL;
 
 $user1 = new User("神里", 32, "男");
 $user2 = new User("あじー", 32, "男");
@@ -297,7 +304,29 @@ echo PHP_EOL;
 
 print("#####q18#####" . PHP_EOL);
 
-# コードを追加
+class Man 
+{
+    private $name;
+    private $age;
+
+    public function __construct($user_name,$user_age)
+    {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
+
+    public function introduce()
+    {
+        if ( $this->age >= 20)
+        {
+            print("こんにちは，" . $this->name . "と申します。宜しくお願いいたします。" . PHP_EOL);
+        } else {
+            print("はいさいまいど〜，" . $this->name . "です！！！" . PHP_EOL);
+        }
+    }
+}
+
+echo PHP_EOL;
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -308,17 +337,19 @@ $man2->introduce();
 echo PHP_EOL;
 
 print("#####q19#####" . PHP_EOL);
+
 class Item
 {
 # 以下を修正して下さい
+    public $name;
 
-protected $name;
+    function __construct($book_name)
+    {
+        $this->name = $book_name;
+    }
+}
 
-function __construct($book_name)
-{
-$this->name = $book_name;
-}
-}
+echo PHP_EOL;
 # 以下は変更しないで下さい
 
 $book = new Item("ゼロ秒思考");
@@ -329,17 +360,46 @@ echo PHP_EOL;
 print("#####q20#####" . PHP_EOL);
 class Human
 {
+    protected $name;
+    protected $age;
 
-# コードを追加
-
+    public function __construct($human_name, $human_age)
+    {
+        $this->name = $human_name;
+        $this->age = $human_age;
+    }
 }
 
-class Zoo
+class Zoo extends Human
 {
+    private $zoo;
+    private $entry_fee;
 
-# コードを追加
+    public function __construct($zoo_name, $zoo_entry_fee)
+    {
+        $this->zoo = $zoo_name;
+        $this->entry_fee = $zoo_entry_fee;
+    }
 
+    public function info_entry_fee(Human $human)
+    {
+        if ($human->age <= 5)
+        {
+            print($human->name . "さんの入場料金は " . $this->entry_fee["infant"] . " 円です。" . PHP_EOL);
+        } elseif ($human->age <= 12)
+        {
+            print($human->name . "さんの入場料金は " . $this->entry_fee["children"] . " 円です。" . PHP_EOL);
+        } elseif ($human->age <= 64)
+        {
+            print($human->name . "さんの入場料金は " . $this->entry_fee["adult"] . " 円です。" . PHP_EOL);
+        } elseif ($human->age <= 120)
+        {
+            print($human->name . "さんの入場料金は " . $this->entry_fee["senior"] . " 円です。" . PHP_EOL);
+        }
+    }
 }
+
+echo PHP_EOL;
 
 $zoo = new Zoo("旭山動物園", ["infant" => 0, "children" => 400, "adult" => 800, "senior" => 500]);
 
@@ -355,3 +415,7 @@ $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
