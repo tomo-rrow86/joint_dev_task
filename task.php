@@ -278,10 +278,11 @@ class User
     private $age;
     private $gender;
 
-    public function __construct($name, $age, $gender) {
-        $this->name = $name;
-        $this->age = $age;
-        $this->gender = $gender;
+    public function __construct($user_name, $user_age, $user_gender) 
+    {
+        $this->name = $user_name;
+        $this->age = $user_age;
+        $this->gender = $user_gender;
     }
 
     public function info()
@@ -303,13 +304,31 @@ $user2->info();
 
 echo PHP_EOL;
 
-?>
-
-//------------------------ここまで完了------------------------
-
 print("#####q18#####" . PHP_EOL);
 
-# コードを追加
+class Man 
+{
+    private $name;
+    private $age;
+
+    public function __construct($user_name,$user_age)
+    {
+        $this->name = $user_name;
+        $this->age = $user_age;
+    }
+
+    public function introduce()
+    {
+        if ( $this->age > 20)
+        {
+            print("こんにちは，" . $this->name . "と申します。宜しくお願いいたします。" . PHP_EOL);
+        } else {
+            print("はいさいまいど〜，" . $this->name . "です！！！" . PHP_EOL);
+        }
+    }
+}
+
+echo PHP_EOL;
 
 $man1 = new Man("あじー", 32);
 $man2 = new Man("ゆたぼん", 10);
@@ -318,6 +337,10 @@ $man1->introduce();
 $man2->introduce();
 
 echo PHP_EOL;
+
+?>
+
+//------------------------ここまで完了------------------------
 
 print("#####q19#####" . PHP_EOL);
 class Item
