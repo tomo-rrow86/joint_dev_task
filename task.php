@@ -249,8 +249,6 @@ if ( array_key_exists('age', $data2) ) {
 
 echo PHP_EOL;
 
-//------------------------12/13 提出 ここから------------------------
-
 print("#####q16#####" . PHP_EOL);
 $users = [
 ["name" => "satou", "age" => 22],
@@ -269,7 +267,10 @@ foreach( $users as $value ) {
 
 echo PHP_EOL;
 
+//------------------------12/13 提出 ここから------------------------
+
 print("#####q17#####" . PHP_EOL);
+
 class User
 {
     private $name;
@@ -415,6 +416,30 @@ $zoo->info_entry_fee($human);
 }
 
 echo PHP_EOL;
+
+print("#####q21#####" . PHP_EOL);
+
+echo PHP_EOL;
+
+for ($i = 1; $i <= 30; $i++) {
+    if ($i % 105 === 0) {
+        print("FizzBuzzHoge" . PHP_EOL);
+    } elseif ($i % 35 === 0) {
+        print("BuzzHoge" . PHP_EOL);
+    } elseif ($i % 21 === 0) {
+        print("FizzHoge" . PHP_EOL);
+    } elseif ($i % 15 === 0) {
+        print("FizzBuzz" . PHP_EOL);
+    } elseif ($i % 7 === 0) {
+        print("Hoge" . PHP_EOL);
+    } elseif ($i % 5 === 0) {
+        print("Buzz" . PHP_EOL);
+    } elseif ($i % 3 === 0) {
+        print("Fizz" . PHP_EOL);
+    } else {
+        print($i . PHP_EOL);
+    }
+};
 
 ?>
 
